@@ -122,7 +122,7 @@ header nav:hover .links {
 main {
 	width: 100%;
 	height: 90vh;
-	background: url("../images/landing.jpg") top center no-repeat;
+	background: url("../images/landing.webp") top center no-repeat;
 	background-size: cover;
 	flex-direction: column;
 	text-align: center;
@@ -145,12 +145,11 @@ main span {
 /*Start Features Section*/
 section.features {
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: space-between;
 	background-color: var(--gray);
 	padding: 70px var(--container);
 	text-align: center;
 	row-gap: 50px;
-	column-gap: 70px;
 }
 
 section.features .feat {
@@ -208,7 +207,8 @@ section.services {
 	position: relative;
 
 }
-section.services .container {
+:is(section.services, section.about) .container {
+	row-gap: 50px;
 	justify-content: space-between;
 	padding: 20px 0px 80px 0px;
 }
@@ -318,15 +318,95 @@ section.portfolio .project p {
 	content: "If you do it right, it will last forever.";
 }
 
+/*About Section*/
+section.about {
+	background-color: #fff;
+	width: 100%;
+	padding: 0px var(--container);
+}
 
+section.about .container {
+	padding: 20px 0px 80px 0px;
+	column-gap: 20%;
+	flex-wrap: wrap;
+}
 
+section.about .title-div .about-title::before {
+	content: "Less is more work";
+}
 
+section.about div.img-i-l {
+	max-width: 250px;
+	position: relative;
+	z-index: 1;
+}
+
+section.about div.img-i-l img {
+	width: 100%;
+	height: auto;
+}
+
+section.about div.img-i-l::after {
+	content: "";
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	border: #10CAB7 70px solid;
+	border-right: none;
+	border-top: none;
+	width: 50%;
+	height: 80%;
+	transform: translate(80%, -10%);
+	z-index: -1;
+}
+
+section.about div.img-i-l::before {
+	content: "";
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	border-left: var(--gray-text) 100px solid;
+	height: 116%;
+	transform: translate(-50%, -8%);
+	z-index: -1;
+}
+
+section.about div.paragraph {
+	height: 100%;
+	flex-direction: column;
+	align-items: flex-start;
+	max-width: 600px;
+}
+
+section.about div.paragraph p {
+	line-height: 2;
+}
+
+section.about div.paragraph p:first-child {
+	font-weight: 600;
+}
+
+section.about div.paragraph p:last-child {
+	color: var(--dark-gray);
+}
+
+section.about div.paragraph hr {
+	width: 50%;
+	background-color: var(--cyan);
+	border: none;
+	height: 2px;
+	margin: 25px 0px 15px 0px;
+}
 
 
 
 
 /*Media Queries*/
 @media (max-width: 1280px) {
+	section.features {
+		justify-content: center;
+	}
+
 	section.services .img-column {
 		display: none;
 	}
@@ -341,6 +421,20 @@ section.portfolio .project p {
 		align-items: center;
 		flex-direction: column;
 		text-align: center;
+	}
+
+	section.about div.paragraph {
+		align-items: center;
+		text-align: center;
+	}
+
+	section.about div.img-i-l::before,
+	section.about div.img-i-l::after {
+		display: none;
+	}
+
+	.container {
+		justify-content: center !important;
 	}
 }
 
