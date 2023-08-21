@@ -2,6 +2,7 @@
 
 * {
 	box-sizing: border-box;
+	scroll-behavior: smooth;
 }
 
 :root {
@@ -177,6 +178,7 @@ section.features .feat p {
 	color: var(--gray-text);
 	text-align: center;
 	position: relative;
+	margin: 0px;
 }
 
 .section-title::before { /*global pseudo element*/
@@ -193,7 +195,8 @@ section.features .feat p {
 }
 
 .title-div { /*global class*/
-	width: 100%
+	width: 100%;
+	padding: 2.5rem 0px;
 }
 
 .title-div .services-title::before {
@@ -207,9 +210,10 @@ section.services {
 	position: relative;
 
 }
-:is(section.services, section.about) .container {
+:is(section.services, section.about, section.contact, section.portfolio) .container {
 	row-gap: 50px;
 	justify-content: space-between;
+	height: fit-content;
 	padding: 20px 0px 80px 0px;
 }
 
@@ -279,12 +283,10 @@ section.portfolio {
 	padding: 0px var(--container) 80px;
 }
 
-section.portfolio .conatiner {
-	justify-content: center;
-	flex-wrap: wrap;
+section.portfolio .container {
+	justify-content: space-between;
 	row-gap: 40px;
-	column-gap: 25px;
-
+	flex-wrap: wrap;
 }
 
 section.portfolio div.project {
@@ -322,11 +324,11 @@ section.portfolio .project p {
 section.about {
 	background-color: #fff;
 	width: 100%;
-	padding: 0px var(--container);
+	padding: 0px var(--container) 80px;
 }
 
 section.about .container {
-	padding: 20px 0px 80px 0px;
+	padding-top: 20px;
 	column-gap: 20%;
 	flex-wrap: wrap;
 }
@@ -397,6 +399,64 @@ section.about div.paragraph hr {
 	height: 2px;
 	margin: 25px 0px 15px 0px;
 }
+
+/*Contact Us Section*/
+section.contact {
+	background-color: var(--gray);
+	width: 100%;
+	padding: 0px var(--container);
+}
+
+section.contact .container {
+	flex-direction: column;
+	row-gap: 15px;
+	text-align: center;
+}
+
+section.contact .title-div .contact-title::before {
+	content: "We are born to create";
+}
+
+section.contact .container h2 {
+	color: var(--dark-green);
+	font-weight: 700;
+	font-size: 2rem;
+	margin: 0px;
+	letter-spacing: -1px;
+}
+
+section.contact .container span a {
+	color: var(--cyan);
+	letter-spacing: 0px;
+	font-size: 2rem;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+section.contact .container div.social-media {
+	column-gap: 10px;
+	row-gap: 10px;
+	flex-wrap: wrap;
+}
+
+section.contact .container div.social-media div {
+	column-gap: 10px;
+	color: var(--dark-green);
+}
+
+/*Footer*/
+footer {
+	padding: 30px 0px;
+	width: 100%;
+	background-color: var(--dark-green);
+	color: #fff;
+	word-spacing: 4px;
+	font-size: 1.1rem;
+}
+
+
+
+
 
 
 
